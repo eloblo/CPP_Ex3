@@ -18,7 +18,7 @@ test2: TestRunner.o StudentTest2.o  $(OBJECTS)
 test3: TestRunner.o StudentTest3.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-main: Main.o $(OBJECTS)
+main: main.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o main
 
 %.o: %.cpp $(HEADERS)
@@ -42,3 +42,4 @@ valgrind: test1
 clean:
 	rm -f *.o test*
 	rm -f StudentTest*.cpp
+	rm -f main core
